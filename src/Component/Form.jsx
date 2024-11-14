@@ -1,68 +1,72 @@
+import React, { useState } from 'react'
+import './Form.css'
 
-import React, { useState } from 'react'; 
+function Form() {
+  const [Name,setName] = useState('');
+  const [Email,setEmail] = useState('');
+  const [Number,setNumber] = useState();
 
-
-function MyForm() {
-  // Step 1: Set up state for each form field
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  // Step 3: Handle form submission
+  
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission
-
-    // Access the form data
-    const formData = {
-      name,
-      email,
-      message,
-    };
-
-    // Log data or send it to an API
-    console.log('Form Data:', formData);
-
-    // Clear the form
+    event.preventDefault();
+    if (!Name ||!Email || !Number ) {
+      alert('Please fill out all fields');
+      return;
+    }
+    alert(`Name: ${Name}, Email: ${Email} and Number: ${Number}`);
     setName('');
     setEmail('');
-    setMessage('');
-  };
+  }
+
+  setEmail();
+  setName();
+  setNumber();
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* Step 2: Create form elements */}
+
+    <div className="form">
+      <h2>Registration Form</h2>
+    <form onSubmit={handleSubmit} className='Formreg'>
       <div>
-        <label htmlFor="name">Name:</label>
+      <label htmlFor="Name">
+        Name:
         <input
           type="text"
-          id="name"
-          value={name}
+          id="Name"
+          value={Name}
           onChange={(e) => setName(e.target.value)}
         />
-      </div>
 
+      </label>
+      </div>
       <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+      <label htmlFor="Email">
+      Email:
+      <input
+        type="email"
+        id="Email"
+        value={Email}
+        onChange={(e) => setEmail(e.target.value)} />
+      </label>
       </div>
-
       <div>
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+        <label htmlFor="PhoneNumber">
+            Phone Number:
+            <input
+              type="text"
+              id="PhoneNumber"
+              value={Number}
+              onChange={(e) => setNumber(e.target.value)} /> 
+        </label>
       </div>
 
-      <button type="submit">Submit</button>
     </form>
-  );
+    <button type="submit">Submit</button>
+    </div>
+  )
 }
 
-export default MyForm;
+export default Form
+
+
+
