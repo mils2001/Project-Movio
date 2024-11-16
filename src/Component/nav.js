@@ -8,16 +8,21 @@ class Nav extends Component{
         this.state = {
             message:'hello'
         }
-        Changeext (){
-            this.setState({
-                alert:`${this.state.message}`
-            })
-        }
 
+    }
+    ChangeText(){
+        this.setState({
+            alert:`${this.state.message}`
+        })
     }
     render(){
         return(
+            
+             
             <div>
+                <div>
+                {this.state.message}
+             </div>
                 <nav className="NAV">
                       <button onClick={this.ChangeText}>About Us</button>
                 </nav>
