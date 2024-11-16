@@ -10,7 +10,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!Name ||!Email || !Number ) {
-      alert('Please fill out all fields');
+      alert(`${this.state.name}${this.state.email}${this.state.Number}`);
       return;
     }
     alert(`Name: ${Name}, Email: ${Email} and Number: ${Number}`);
