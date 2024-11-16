@@ -4,7 +4,7 @@ import './Form.css'
 function Form() {
   const [Name,setName] = useState('');
   const [Email,setEmail] = useState('');
-  const [Number,setNumber] = useState();
+  const [Number,setNumber] = useState('');
 
   
   const handleSubmit = (event) => {
@@ -17,56 +17,41 @@ function Form() {
     setName('');
     setEmail('');
   }
+  const FormData =  {Name,Email,Number};
+    console.log(FormData, FormData);
 
-  setEmail();
-  setName();
-  setNumber();
+    setName();
+    setEmail();
+    setNumber();
 
-  return (
-
-    <div className="form">
-      <h2>Registration Form</h2>
-    <form onSubmit={handleSubmit} className='Formreg'>
-      <div>
-      <label htmlFor="Name">
+return(
+  <div className="Form">
+    <form onSubmit={handleSubmit}>
+      <label>
         Name:
-        <input
-          type="text"
-          id="Name"
-          value={Name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
+        <input type="text" value={Name} onChange={(e) => setName(e.target.value)} required/>
       </label>
-      </div>
-      <div>
-      <label htmlFor="Email">
-      Email:
-      <input
-        type="email"
-        id="Email"
-        value={Email}
-        onChange={(e) => setEmail(e.target.value)} />
+      <br/>
+      <label>
+        Email:
+        <input type="email" value={Email} onChange={(e) => setEmail(e.target.value)} required/>
       </label>
-      </div>
-      <div>
-        <label htmlFor="PhoneNumber">
-            Phone Number:
-            <input
-              type="text"
-              id="PhoneNumber"
-              value={Number}
-              onChange={(e) => setNumber(e.target.value)} /> 
-        </label>
-      </div>
-
+      <br/>
+      <label>
+        Number:
+        <input type="tel" value={Number} onChange={(e) => setNumber(e.target.value)} required/>
+      </label>
+      <br/>
+      <input type="submit" value="Submit"/>
     </form>
-    <button type="submit">Submit</button>
-    </div>
-  )
-}
+  </div>
+)
 
+}
+  
 export default Form
+
+
 
 
 
