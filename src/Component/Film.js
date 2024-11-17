@@ -19,6 +19,8 @@ export default function Film() {
   }, [id]); // Add id to the dependency array
 
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 }
