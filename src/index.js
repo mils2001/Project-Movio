@@ -18,20 +18,27 @@ function MovieApp () {
   });
   Const[editMovie, setEditMovie] = useState ([]);
 
- useEffect(() => {
+ 
   function FetchMovie() {
      fetch(API_URL)
-      const response => await fetch(API_URL);
-      const data => await response.json();
-      setMovieList(data, movieList);
-    } catch(error) {
-      console.error('Error:', error);
-    
-  };
- 
-  setMovieList();
+    .then((response) => response.json)
+    .then((data) =>{
+      setMovieList(data);
+      if(callback){
+        callback();
+      }
+      useEffect(()=>{
+       FetchMovie(()=>{
+        console.log("movie fetched successfully")
+       })
 
- }, []);
+      },[]);
+      
+
+    
+    })
+  
+    
  const HandleMovieList = async(event) =>{
     event.preventDefault();
     try{
@@ -59,6 +66,7 @@ function MovieApp () {
  }
 }
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -70,5 +78,6 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
 
 export default MovieApp
