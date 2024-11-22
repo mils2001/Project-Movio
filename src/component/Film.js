@@ -20,7 +20,8 @@ export default function Film() {
 
   return (
     <div>
-      <cart> </cart>
+      <cart>
+         </cart>
     </div>
   )
 }
