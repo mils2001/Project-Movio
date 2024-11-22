@@ -1,62 +1,96 @@
-/* Main container */
-div {
-  max-width: 1200px; /* Increased width for better alignment */
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
 }
 
-/* Movie list container */
-ul {
+.navbar input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Form styling */
+.movie-form {
+  max-width: 600px;
+  margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Space between cards */
-  padding: 0;
-  list-style: none;
-  justify-content: center; /* Center align the grid */
-}
-
-/* Individual card */
-li {
-  flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
-  box-sizing: border-box;
+  gap: 10px;
+  background: #f9f9f9;
+  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 15px;
-  background: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-li h2 {
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-  color: #333;
+.movie-form input,
+.movie-form textarea,
+.movie-form button {
+  flex: 1 1 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-li p {
-  margin: 5px 0;
-  color: #666;
-  font-size: 0.9rem;
+.movie-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-li img {
+.movie-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Movie list */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+}
+
+.movie-card img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
   border-radius: 8px;
-  object-fit: cover;
 }
-.btn{
-  background-color: black;
-  color:gold;
-  border-radius: 5px;
-  padding: 4px;
-  
+
+.movie-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
 }
+
+.movie-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
 
