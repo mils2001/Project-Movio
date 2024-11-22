@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './App.css'; // Assuming you have App-specific styles
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import './index.css'
 
 const API_URL = 'http://localhost:3005/films';
 
@@ -17,7 +17,7 @@ function MovieApp() {
     runtime: '',
     id: null,
   });
-  const [editMovie, setEditMovie] = useState(null);
+  const [alert, setAlert] = useState(''); // State for alert messages
 
   // Fetch movies from API
   const fetchMovies = async () => {
@@ -58,6 +58,12 @@ function MovieApp() {
     }
   };
 
+  // Change event for "Purchase Movie" button
+  const handlePurchaseMovie = () => {
+    setAlert('PURCHASED!'); // Update alert message
+    setTimeout(() => setAlert(''), 2000); // Clear alert after 2 seconds
+  };
+
   // Fetch movies on component mount
   useEffect(() => {
     fetchMovies();
@@ -66,6 +72,7 @@ function MovieApp() {
   return (
     <div>
       <h1>Movie App</h1>
+      
       {/* Add new movie form */}
       <form onSubmit={handleMovieSubmit}>
         <input
@@ -100,6 +107,9 @@ function MovieApp() {
         <button type="submit">Add Movie</button>
       </form>
 
+      {/* Alert */}
+      {alert && <div className="alert">{alert}</div>}
+
       {/* Movie List */}
       <ul>
         {movieList.map((movie) => (
@@ -107,9 +117,19 @@ function MovieApp() {
             <h2>{movie.title}</h2>
             <p>{movie.description}</p>
             <img src={movie.poster} alt={movie.title} />
+            <button className="btn" onClick={handlePurchaseMovie}>
+              Purchase Movie
+            </button>
           </li>
         ))}
       </ul>
+
+      {/* Footer */}
+      <div className="footer">
+        <footer>
+          <span>2025 Molvotv Entertainment. All rights reserved.</span>
+        </footer>
+      </div>
     </div>
   );
 }
@@ -118,7 +138,7 @@ function MovieApp() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MovieApp />
   </React.StrictMode>
 );
 
@@ -126,3 +146,4 @@ root.render(
 reportWebVitals();
 
 export default MovieApp;
+

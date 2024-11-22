@@ -52,4 +52,11 @@ li img {
   border-radius: 8px;
   object-fit: cover;
 }
+.btn{
+  background-color: black;
+  color:gold;
+  border-radius: 5px;
+  padding: 4px;
+  
+}
 
