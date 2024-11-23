@@ -5,7 +5,7 @@ function footer() {
   return (
     <div className='footer'>
         <footer>
-            <span>2025 Molvotv Entertainment. All rights reserved.</span>
+            <span></span>
         </footer>
     </div>
   )

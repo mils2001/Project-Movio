@@ -125,13 +125,14 @@ function MovieApp() {
             <img src={movie.poster} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.description}</p>
+            <button className="btn">Purchase Movie</button>
           </div>
         ))}
       </div>
 
       {/* Footer */}
       <footer className="footer">
-        <span>2025 Molvotv Entertainment. All rights reserved.</span>
+        <span>2025 Molvotv Entertainment@All rights reserved.</span>
       </footer>
     </div>
   );
