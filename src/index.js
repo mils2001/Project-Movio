@@ -76,6 +76,7 @@ function MovieApp() {
           value={searchQuery}
           onChange={handleSearch}
         />
+        <button className="search"type="search">Search</button>
       </nav>
 
       {/* Add new movie form */}
