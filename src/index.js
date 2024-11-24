@@ -17,16 +17,7 @@ function MovieApp() {
     runtime: "",
     id: null,
   });
-  this.state = {
-    message: 'Purchase'
-  }
-  ChangeText(){
-    this.setState({
-      message:'Showtime'
-
-      
-    })
-  }
+  const [purchaseMessage, setPurchaseMessage] = useState("Purchase");
 
   const fetchMovies = async () => {
     try {
@@ -71,24 +62,30 @@ function MovieApp() {
     }
   };
 
+  const handlePurchaseClick = () => {
+    setPurchaseMessage('showtime');
+  };
+
   useEffect(() => {
     fetchMovies();
   }, []);
 
   return (
     <div className="movie-app">
-      {this.state.message}
-    
+      {/* Purchase Message */}
+      <h1>{purchaseMessage}</h1>
+
       {/* Navbar */}
       <nav className="navbar">
-        
         <input
           type="text"
           placeholder="Search movies..."
           value={searchQuery}
           onChange={handleSearch}
         />
-        <button className="search"type="search">Search</button>
+        <button className="search" type="button">
+          Search
+        </button>
       </nav>
 
       {/* Add new movie form */}
@@ -138,7 +135,9 @@ function MovieApp() {
             <img src={movie.poster} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.description}</p>
-            <button className="btn" onClick={() =>this.ChangeText()}>Purchase Movie</button>
+            <button className="btn" onClick={handlePurchaseClick}>
+              Purchase Movie
+            </button>
           </div>
         ))}
       </div>
@@ -161,5 +160,6 @@ root.render(
 
 reportWebVitals();
 export default MovieApp;
+
 
 
