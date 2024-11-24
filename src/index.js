@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const API_URL = "http://localhost:3005/films";
+const API_URL = "http://localhost:3002/films";
 
 function MovieApp() {
   const [movieList, setMovieList] = useState([]);
