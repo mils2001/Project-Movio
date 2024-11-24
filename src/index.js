@@ -17,6 +17,16 @@ function MovieApp() {
     runtime: "",
     id: null,
   });
+  this.state = {
+    message: 'Purchase'
+  }
+  ChangeText(){
+    this.setState({
+      message:'Showtime'
+
+      
+    })
+  }
 
   const fetchMovies = async () => {
     try {
@@ -67,6 +77,8 @@ function MovieApp() {
 
   return (
     <div className="movie-app">
+      {this.state.message}
+    
       {/* Navbar */}
       <nav className="navbar">
         
@@ -126,7 +138,7 @@ function MovieApp() {
             <img src={movie.poster} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.description}</p>
-            <button className="btn">Purchase Movie</button>
+            <button className="btn" onClick={() =>this.ChangeText()}>Purchase Movie</button>
           </div>
         ))}
       </div>
