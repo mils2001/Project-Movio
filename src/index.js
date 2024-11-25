@@ -17,7 +17,7 @@ function MovieApp() {
     runtime: "",
     id: null,
   });
-  const [purchaseMessage, setPurchaseMessage] = useState("Purchase");
+
 
   const fetchMovies = async () => {
     try {
@@ -61,9 +61,14 @@ function MovieApp() {
       console.error("Error adding movie:", error);
     }
   };
+  this.state = {
+    alert:('success'),
+  }
 
   const handlePurchaseClick = () => {
-    setPurchaseMessage('showtime');
+    setState = ({
+      alert:('Showtume!')
+    })
   };
 
   useEffect(() => {
@@ -73,7 +78,7 @@ function MovieApp() {
   return (
     <div className="movie-app">
       {/* Purchase Message */}
-      <h1>{purchaseMessage}</h1>
+      
 
       {/* Navbar */}
       <nav className="navbar">
@@ -135,6 +140,7 @@ function MovieApp() {
             <img src={movie.poster} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.description}</p>
+            {this.state.alert}
             <button className="btn" onClick={handlePurchaseClick}>
               Purchase Movie
             </button>
