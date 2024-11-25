@@ -13,6 +13,7 @@ function MovieApp() {
   const [isPaymentPopupVisible, setIsPaymentPopupVisible] = useState(false); // Popup state
   const [selectedMovie, setSelectedMovie] = useState(null); // Selected movie state
   const [paymentMethod, setPaymentMethod] = useState(""); // Payment method state
+  const [phoneNumber, setPhoneNumber] = useState(""); // Phone number state
 
   const fetchMovies = async () => {
     try {
@@ -31,12 +32,16 @@ function MovieApp() {
 
   const handlePaymentSubmit = (e) => {
     e.preventDefault();
-    console.log(`Movie: ${selectedMovie.title}, Payment Method: ${paymentMethod}`);
+    console.log(
+      `Movie: ${selectedMovie.title}, Payment Method: ${paymentMethod}, Phone Number: ${phoneNumber}`
+    );
     setAlertMessage(
-      `You purchased "${selectedMovie.title}" using ${paymentMethod}!`
+      `You purchased "${selectedMovie.title}" using ${paymentMethod}! Phone Number: ${phoneNumber}`
     );
     setIsPaymentPopupVisible(false); // Close the popup
     setTimeout(() => setAlertMessage(""), 3000); // Clear the alert after 3 seconds
+    setPhoneNumber(""); // Clear phone number field
+    setPaymentMethod(""); // Clear payment method field
   };
 
   useEffect(() => {
@@ -98,6 +103,13 @@ function MovieApp() {
                 <option value="Airtel Money">Airtel Money</option>
                 <option value="Western Union">Western Union</option>
               </select>
+              <input
+                type="tel"
+                placeholder="Enter phone number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                required
+              />
               <button type="submit">Submit</button>
               <button
                 type="button"
@@ -129,6 +141,7 @@ root.render(
 
 reportWebVitals();
 export default MovieApp;
+
 
 
 
