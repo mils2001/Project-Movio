@@ -62,7 +62,7 @@ function MovieApp() {
 
   const handlePurchaseClick = () => {
     setAlertMessage("Showtime!");
-    setTimeout(() => setAlertMessage(""), 2000); // Clear the alert after 2 seconds
+    setTimeout(() => setAlertMessage(""), 8000); // Clear the alert after 8 seconds
   };
 
   useEffect(() => {
