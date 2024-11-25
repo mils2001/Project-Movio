@@ -9,15 +9,14 @@ const API_URL = "http://localhost:3002/films";
 function MovieApp() {
   const [movieList, setMovieList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
   const [newMovie, setNewMovie] = useState({
     title: "",
     description: "",
     poster: "",
     capacity: "",
     runtime: "",
-    id: null,
   });
-
 
   const fetchMovies = async () => {
     try {
@@ -55,20 +54,15 @@ function MovieApp() {
         poster: "",
         capacity: "",
         runtime: "",
-        id: null,
       });
     } catch (error) {
       console.error("Error adding movie:", error);
     }
   };
-  this.state = {
-    alert:('success'),
-  }
 
   const handlePurchaseClick = () => {
-    setState = ({
-      alert:('Showtume!')
-    })
+    setAlertMessage("Showtime!");
+    setTimeout(() => setAlertMessage(""), 2000); // Clear the alert after 2 seconds
   };
 
   useEffect(() => {
@@ -77,8 +71,8 @@ function MovieApp() {
 
   return (
     <div className="movie-app">
-      {/* Purchase Message */}
-      
+      {/* Alert Message */}
+      {alertMessage && <div className="alert">{alertMessage}</div>}
 
       {/* Navbar */}
       <nav className="navbar">
@@ -140,7 +134,6 @@ function MovieApp() {
             <img src={movie.poster} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.description}</p>
-            {this.state.alert}
             <button className="btn" onClick={handlePurchaseClick}>
               Purchase Movie
             </button>
@@ -166,6 +159,3 @@ root.render(
 
 reportWebVitals();
 export default MovieApp;
-
-
-
