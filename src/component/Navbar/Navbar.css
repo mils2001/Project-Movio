@@ -94,5 +94,17 @@
     padding: 8px 15px;
     cursor: pointer;
   }
+  .subs{
+    background-color: #000;
+    color: gold;
+  }
+  .subs:hover{
+    background-color: #000;
+    color: aqua;
+  }
+  .close{
+    background-color: red;
+    color: white;
+  }
   
   

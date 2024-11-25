@@ -124,8 +124,8 @@ class Navbar extends Component {
                   onChange={this.handleSignUpChange}
                   required
                 />
-                <button type="submit">Submit</button>
-                <button type="button" onClick={this.toggleSignUpPopup}>Close</button>
+                <button type="submit" className='subs'>Submit</button>
+                <button type="button" onClick= {this.toggleSignUpPopup} className='close'>Close</button>
               </form>
             </div>
           </div>
@@ -153,8 +153,8 @@ class Navbar extends Component {
                   onChange={this.handleSignInChange}
                   required
                 />
-                <button type="submit">Submit</button>
-                <button type="button" onClick={this.toggleSignInPopup}>Close</button>
+                <button type="submit" className='subs'>Submit</button>
+                <button type="button" onClick={this.toggleSignInPopup} className='close'>Close</button>
               </form>
             </div>
           </div>
