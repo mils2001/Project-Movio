@@ -10,9 +10,9 @@ function MovieApp() {
   const [movieList, setMovieList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
-  const [isPricePopupVisible, setIsPricePopupVisible] = useState(false); // Price popup state
-  const [selectedMovie, setSelectedMovie] = useState(null); // Track the selected movie
-  const [price, setPrice] = useState(""); // Track the price input
+  const [isPaymentPopupVisible, setIsPaymentPopupVisible] = useState(false); // Popup state
+  const [selectedMovie, setSelectedMovie] = useState(null); // Selected movie state
+  const [paymentMethod, setPaymentMethod] = useState(""); // Payment method state
 
   const fetchMovies = async () => {
     try {
@@ -26,14 +26,16 @@ function MovieApp() {
 
   const handlePurchaseClick = (movie) => {
     setSelectedMovie(movie);
-    setIsPricePopupVisible(true); // Show the price popup
+    setIsPaymentPopupVisible(true); // Show the payment popup
   };
 
-  const handlePriceSubmit = (e) => {
+  const handlePaymentSubmit = (e) => {
     e.preventDefault();
-    console.log(`Movie: ${selectedMovie.title}, Price: $${price}`);
-    setAlertMessage(`You purchased "${selectedMovie.title}" for $${price}!`);
-    setIsPricePopupVisible(false); // Close the popup
+    console.log(`Movie: ${selectedMovie.title}, Payment Method: ${paymentMethod}`);
+    setAlertMessage(
+      `You purchased "${selectedMovie.title}" using ${paymentMethod}!`
+    );
+    setIsPaymentPopupVisible(false); // Close the popup
     setTimeout(() => setAlertMessage(""), 3000); // Clear the alert after 3 seconds
   };
 
@@ -70,30 +72,37 @@ function MovieApp() {
               className="btn"
               onClick={() => handlePurchaseClick(movie)}
             >
-              Purchase 5$
+              Purchase Movie
             </button>
           </div>
         ))}
       </div>
 
-      {/* Price Popup */}
-      {isPricePopupVisible && (
+      {/* Payment Popup */}
+      {isPaymentPopupVisible && (
         <div className="popup-overlay">
           <div className="popup">
-            <h3>Enter Payment for {selectedMovie.title}</h3>
-            <form onSubmit={handlePriceSubmit}>
-              <input
-                type="number"
-                placeholder="Payment Method"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
+            <h3>Choose Payment Method for {selectedMovie.title}</h3>
+            <form onSubmit={handlePaymentSubmit}>
+              <label htmlFor="payment-method">Payment Method:</label>
+              <select
+                id="payment-method"
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value)}
                 required
-              />
+              >
+                <option value="" disabled>
+                  Select Payment Method
+                </option>
+                <option value="M-Pesa">M-Pesa</option>
+                <option value="Airtel Money">Airtel Money</option>
+                <option value="Western Union">Western Union</option>
+              </select>
               <button type="submit">Submit</button>
               <button
                 type="button"
                 className="close-btn"
-                onClick={() => setIsPricePopupVisible(false)}
+                onClick={() => setIsPaymentPopupVisible(false)}
               >
                 Close
               </button>
@@ -120,5 +129,6 @@ root.render(
 
 reportWebVitals();
 export default MovieApp;
+
 
 
