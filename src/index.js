@@ -10,7 +10,8 @@ function MovieApp() {
   const [movieList, setMovieList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
-  const [newMovie, setNewMovie] = useState({
+  const [isPopupVisible, setIsPopupVisible] = useState(false); // Popup state
+  const [popupMovie, setPopupMovie] = useState({
     title: "",
     description: "",
     poster: "",
@@ -28,41 +29,33 @@ function MovieApp() {
     }
   };
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
+  const handlePopupToggle = () => {
+    setIsPopupVisible(!isPopupVisible);
   };
 
-  const filteredMovies = movieList.filter((movie) =>
-    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  const handleMovieSubmit = async (event) => {
-    event.preventDefault();
+  const handlePopupFormSubmit = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newMovie),
+        body: JSON.stringify(popupMovie),
       });
       const data = await response.json();
       setMovieList([...movieList, data]);
-      setNewMovie({
+      setPopupMovie({
         title: "",
         description: "",
         poster: "",
         capacity: "",
         runtime: "",
       });
+      setIsPopupVisible(false); // Close the popup after submission
     } catch (error) {
       console.error("Error adding movie:", error);
     }
-  };
-
-  const handlePurchaseClick = () => {
-    setAlertMessage("Showtime!");
-    setTimeout(() => setAlertMessage(""), 8000); // Clear the alert after 8 seconds
   };
 
   useEffect(() => {
@@ -80,63 +73,84 @@ function MovieApp() {
           type="text"
           placeholder="Search movies..."
           value={searchQuery}
-          onChange={handleSearch}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button className="search" type="button">
           Search
         </button>
       </nav>
 
-      {/* Add new movie form */}
-      <form className="movie-form" onSubmit={handleMovieSubmit}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={newMovie.title}
-          onChange={(e) => setNewMovie({ ...newMovie, title: e.target.value })}
-        />
-        <textarea
-          placeholder="Description"
-          value={newMovie.description}
-          onChange={(e) =>
-            setNewMovie({ ...newMovie, description: e.target.value })
-          }
-        ></textarea>
-        <input
-          type="text"
-          placeholder="Poster URL"
-          value={newMovie.poster}
-          onChange={(e) => setNewMovie({ ...newMovie, poster: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="Capacity"
-          value={newMovie.capacity}
-          onChange={(e) =>
-            setNewMovie({ ...newMovie, capacity: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Runtime"
-          value={newMovie.runtime}
-          onChange={(e) =>
-            setNewMovie({ ...newMovie, runtime: e.target.value })
-          }
-        />
-        <button type="submit">Add Movie</button>
-      </form>
+      {/* Button to trigger popup */}
+      <button className="popup-trigger-btn" onClick={handlePopupToggle}>
+        Add New Movie (Popup)
+      </button>
+
+      {/* Popup Form */}
+      {isPopupVisible && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <h3>Add New Movie</h3>
+            <form onSubmit={handlePopupFormSubmit}>
+              <input
+                type="text"
+                placeholder="Title"
+                value={popupMovie.title}
+                onChange={(e) =>
+                  setPopupMovie({ ...popupMovie, title: e.target.value })
+                }
+              />
+              <textarea
+                placeholder="Description"
+                value={popupMovie.description}
+                onChange={(e) =>
+                  setPopupMovie({ ...popupMovie, description: e.target.value })
+                }
+              ></textarea>
+              <input
+                type="text"
+                placeholder="Poster URL"
+                value={popupMovie.poster}
+                onChange={(e) =>
+                  setPopupMovie({ ...popupMovie, poster: e.target.value })
+                }
+              />
+              <input
+                type="number"
+                placeholder="Capacity"
+                value={popupMovie.capacity}
+                onChange={(e) =>
+                  setPopupMovie({ ...popupMovie, capacity: e.target.value })
+                }
+              />
+              <input
+                type="text"
+                placeholder="Runtime"
+                value={popupMovie.runtime}
+                onChange={(e) =>
+                  setPopupMovie({ ...popupMovie, runtime: e.target.value })
+                }
+              />
+              <button type="submit">Submit</button>
+              <button
+                type="button"
+                className="close-btn"
+                onClick={handlePopupToggle}
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Movie List */}
       <div className="movie-list">
-        {filteredMovies.map((movie) => (
+        {movieList.map((movie) => (
           <div key={movie.id} className="movie-card">
             <img src={movie.poster} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.description}</p>
-            <button className="btn" onClick={handlePurchaseClick}>
-              Purchase Movie
-            </button>
+            <button className="btn">Purchase Movie</button>
           </div>
         ))}
       </div>
@@ -159,3 +173,4 @@ root.render(
 
 reportWebVitals();
 export default MovieApp;
+
