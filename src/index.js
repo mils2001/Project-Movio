@@ -110,7 +110,7 @@ function MovieApp() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               />
-              <button type="submit">Submit</button>
+              <button type="submit" className="subs">Submit</button>
               <button
                 type="button"
                 className="close-btn"

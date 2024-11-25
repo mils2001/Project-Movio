@@ -281,5 +281,13 @@
   padding: 8px;
   cursor: pointer;
 }
+.subs{
+  background-color: #000;
+  color: gold;
+}
+.subs:hover{
+  background-color: gold;
+  color: black;
+}
 
 
