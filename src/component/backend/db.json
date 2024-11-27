@@ -2,27 +2,27 @@
   "films": [
     {
       "id": "1",
-      "title": "The Giant Gila Monster",
+      "title": "Cobra Kai",
       "runtime": "108",
       "capacity": 30,
       "showtime": "04:00PM",
       "tickets_sold": 30,
-      "description": "A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
+      "description": "Cobra Kai is not a movie, but a television series that serves as a sequel to the 1984 film “The Karate Kid.” However, the story of Cobra Kai can be summarized as follows:",
+      "poster": "https://i.imgur.com/PRMUSDW.jpeg"
     },
     {
       "id": "3",
-      "title": "Time Chasers",
+      "title": "Absolution",
       "runtime": "93",
       "capacity": 50,
       "showtime": "09:30PM",
       "tickets_sold": 31,
-      "description": "An inventor comes up with a time machine, but must prevent its abuse at the hands of an evil C.E.O.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/23342/p23342_v_v8_ab.jpg"
+      "description": "The film tells the story of an aging gangster, played by Liam Neeson, who attempts to reconnect with his children and rectify the mistakes of his past. However, the criminal underworld he once operated in refuses to let him go, and he must navigate a complex web of loyalty and redemption.",
+      "poster": "https://i.imgur.com/CcCA0WF.jpeg"
     },
     {
       "id": "4",
-      "title": "The Touch Of Satan",
+      "title": "",
       "runtime": "101",
       "capacity": 40,
       "showtime": "09:00PM",
@@ -102,13 +102,13 @@
     },
     {
       "id": "12",
-      "title": "Secret Agent Super Dragon",
+      "title": "Dont Move",
       "runtime": "104",
       "capacity": 30,
       "showtime": "07:00PM",
       "tickets_sold": 20,
-      "description": "A series of murders in Michigan lead an American secret agent to Amsterdam, where he uncovers a plot to imperil the world with a potent new drug.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/93417/p93417_v_v8_aa.jpg"
+      "description": "Richard injects Iris with a paralytic drug, rendering her immobile, and takes her to his secluded cabin. As Iris’s body begins to shut down, she must use her wits and limited mobility to survive and escape from Richard’s clutches.",
+      "poster": "https://i.imgur.com/5FdvcGf.jpeg"
     },
     {
       "id": "13",
