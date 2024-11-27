@@ -2,13 +2,13 @@
   "films": [
     {
       "id": "1",
-      "title": "Cobra Kai",
+      "title": "Pinguim",
       "runtime": "108",
       "capacity": 30,
       "showtime": "04:00PM",
       "tickets_sold": 30,
-      "description": "Cobra Kai is not a movie, but a television series that serves as a sequel to the 1984 film “The Karate Kid.” However, the story of Cobra Kai can be summarized as follows:",
-      "poster": "https://i.imgur.com/PRMUSDW.jpeg"
+      "description": "Edna the Penguin’s Story: In this children’s book by Antoinette Portis, Edna, a penguin living in Antarctica, feels there must be more colors in the world beyond the white, black, and blue she sees every day. She searches and eventually discovers a bright orange research station, which leads her to find more colors. The story explores Edna’s curiosity and sense of wonder as she explores the world around her.",
+      "poster": "https://i.imgur.com/fiIrwd3.jpeg"
     },
     {
       "id": "3",
@@ -22,43 +22,43 @@
     },
     {
       "id": "4",
-      "title": "",
+      "title": "Super & Lois",
       "runtime": "101",
       "capacity": 40,
       "showtime": "09:00PM",
       "tickets_sold": 31,
-      "description": "A young man meets a farm girl who is actually a witch.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/43468/p43468_v_v8_aa.jpg"
+      "description": "The story of Superman and Lois revolves around the life of Clark Kent, also known as Superman, and his wife Lois Lane. The series, which premiered on February 23, 2021, follows the couple as they navigate their personal and professional lives in the small town of Smallville",
+      "poster": "https://i.imgur.com/joN26ci.jpeg"
     },
     {
       "id": "5",
-      "title": "Santa Claus Conquers The Martians",
+      "title": "Brilliant Minds",
       "runtime": "96",
       "capacity": 50,
       "showtime": "03:30PM",
       "tickets_sold": 45,
-      "description": "The Martians kidnap Santa Claus because there is nobody on Mars to give their children presents.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/4232/p4232_v_v8_aa.jpg"
+      "description": "Brilliant Minds is a medical drama television series created by Michael Grassi, inspired by the life and work of British neurologist Dr. Oliver Sacks. The show follows the story of Dr. Oliver Wolf, a gifted and eccentric neurologist who suffers from a rare condition called prosopagnosia, also known as face blindness.",
+      "poster": "https://i.imgur.com/AdyoN8c.jpeg"
     },
     {
       "id": "6",
-      "title": "Track Of The Moon Beast",
+      "title": "NCIS ORGINS",
       "runtime": "112",
       "capacity": 30,
       "showtime": "10:30PM",
       "tickets_sold": 16,
-      "description": "A young man is transformed into a hideous 'moon beast' due to a meteor fragment lodged in his body.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/39804/p39804_v_v8_ab.jpg"
+      "description": "The Story The series centers around Gibbs’ years as a Probationary NIS Agent while still processing the trauma of the murder of his wife and daughter. Gibbs starts his career as a newly minted special agent at the fledgling NIS Camp Pendleton office, where he forges his place on a gritty, ragtag team led by NCIS legend Mike Franks, played by Kyle Schmid.",
+      "poster": "https://i.imgur.com/qP4kVE8.jpeg"
     },
     {
       "id": "7",
-      "title": "The Skydivers",
+      "title": "Beauty in Black",
       "runtime": "94",
       "capacity": 30,
       "showtime": "07:30PM",
       "tickets_sold": 22,
-      "description": "A woman seeks revenge on her former lover, who owns a skydiving business.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/40518/p40518_v_v8_aa.jpg"
+      "description": " The movie explores themes of exploitation, abuse, and the struggles of marginalized women. It also touches on class differences and the corrupting influence of wealth and power.",
+      "poster": "https://i.imgur.com/PMYxe5F.jpeg"
     },
     {
       "id": "8",
