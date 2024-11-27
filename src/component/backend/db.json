@@ -112,42 +112,42 @@
     },
     {
       "id": "13",
-      "title": "Wild Rebels",
+      "title": "Cross",
       "runtime": "100",
       "capacity": 40,
       "showtime": "09:00PM",
       "tickets_sold": 31,
-      "description": "A stock car driver goes undercover as the wheel man for a motorcycle gang.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/45367/p45367_v_v8_aa.jpg"
+      "description": "The Detective Alex Cross movie series is based on the fictional character Alex Cross, created by James Patterson. The series follows the story of Alex Cross, a detective and psychologist who solves crimes while dealing with personal struggles.",
+      "poster": "https://i.imgur.com/1E6EtoH.jpeg"
     },
     {
       "id": "14",
-      "title": "Danger: Diabolik",
+      "title": "Smile",
       "runtime": "111",
       "capacity": 50,
       "showtime": "08:00PM",
       "tickets_sold": 40,
-      "description": "International man of mystery Diabolik and his lover pull off heist after heist, all while European cops led by Inspector Ginko and envious mobsters led by Ralph Valmont are closing in on them.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/11850/p11850_v_v8_aa.jpg"
+      "description": "The film follows Dr. Rose Cotter (Sosie Bacon), a therapist who witnesses the bizarre and traumatic suicide of her patient, Laura Weaver. As Rose tries to process the incident, she begins to experience increasingly disturbing and unsettling visions, which lead her to believe she is being haunted by an uncanny entity.",
+      "poster": "https://i.imgur.com/KRrTmGO.jpeg"
     },
     {
       "id": "15",
-      "title": "Village Of The Giants",
+      "title": "Ruthless",
       "runtime": "98",
       "capacity": 50,
       "showtime": "04:45PM",
       "tickets_sold": 33,
-      "description": "Delinquent teen-agers ingest a substance and grow thirty feet tall, then proceed to take over a small town.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/37991/p37991_v_v8_aa.jpg"
+      "description": "The 2023 film “Ruthless” follows a high school coach, Harry, whose teenage daughter was murdered. He takes matters into his own hands by targeting a human trafficking ring that kidnapped one of his students, Catia. As Harry delves deeper into the world of human trafficking, he discovers the scope of the problem and embarks on a dangerous mission to rescue Catia and bring the traffickers to justice.",
+      "poster": "https://i.imgur.com/a3JvJfZ.jpeg"
     },
     {
       "id":"22",
-      "title":"Ruthless",
+      "title":"Average Joe",
       "runtime":"100",
       "capacity":40,
       "showtime":"04:45PM",
       "tickets_sold":45,
-      "description":"A young man falls into an ordeal with some of the streets thugs in the neighborhood.But things go south when his daughter is kidnapped and murdered",
+      "description":"The Average Joe movie is based on a true story and follows the life of Joe Kennedy, a high school football coach who becomes a fighter for religious freedom. ",
       "poster": "https://i.imgur.com/hdCZXFm.jpeg"
 
     }
