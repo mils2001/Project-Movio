@@ -62,43 +62,43 @@
     },
     {
       "id": "8",
-      "title": "The Killer Shrews",
+      "title": "Megalopolis",
       "runtime": "115",
       "capacity": 40,
       "showtime": "08:30PM",
       "tickets_sold": 32,
-      "description": "On an isolated island, a small group of people are terrorized by giant voracious shrews in the midst of a hurricane.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/1466/p1466_v_v8_ab.jpg"
+      "description": "Megalopolis is a 2024 science fiction film directed by Francis Ford Coppola, starring Adam Driver, Giancarlo Esposito, Nathalie Emmanuel, and Shia LaBeouf. The movie is set in a futuristic New Rome, a city inspired by ancient Rome, and explores themes of innovation, corruption, and societal collapse.",
+      "poster": "https://i.imgur.com/QoLrBSZ.jpeg"
     },
     {
       "id": "9",
-      "title": "Project Moon Base",
+      "title": "Girl Haunts Boys",
       "runtime": "99",
       "capacity": 40,
       "showtime": "07:30PM",
       "tickets_sold": 22,
-      "description": "A saboteur posing as a scientist strives to destroy the world's first space station.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/46755/p46755_v_v8_aa.jpg"
+      "description": " The movie explores themes of grief, loneliness, and the importance of moving forward. Cole’s journey helps him come to terms with his father’s passing, and Bea’s story shows her ability to restart her life and find happiness despite her tragic death.",
+      "poster": "https://i.imgur.com/VzGO4Sm.jpeg"
     },
     {
       "id": "10",
-      "title": "The Giant Spider Invasion",
+      "title": "Black Panther Foever.",
       "runtime": "122",
       "capacity": 50,
       "showtime": "10:00PM",
       "tickets_sold": 44,
-      "description": "Giant spiders from another dimension invade Wisconsin.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/42171/p42171_v_v8_ab.jpg"
+      "description": "Grief, legacy, and the struggle to balance tradition with progress are central themes. The film explores the complexities of Wakanda’s relationships with the world and its own internal conflicts.",
+      "poster":"https://i.imgur.com/xGoWe0D.jpeg"
     },
     {
       "id": "11",
-      "title": "Catalina Caper",
+      "title": "Sweet Pea",
       "runtime": "104",
       "capacity": 30,
       "showtime": "06:00PM",
       "tickets_sold": 12,
-      "description": "A group of swingin' teens take time out from having fun in the sun to try to foil a group of crooks searching for a stolen scroll.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/58122/p58122_v_v8_aa.jpg"
+      "description": "A British dark comedy drama miniseries created by Kirstie Swain for Sky Atlantic, starring Ella Purnell as Rhiannon Lewis, an administrative assistant who leads a quiet life until her father's death leads to a chance encounter with a stranger that changes everything. The series premiered on October 10, 2024, and received generally favorable reviews, with an approval rating of 85% on Rotten Tomatoes",
+      "poster":"https://i.imgur.com/2hnwQka.jpeg"
     },
     {
       "id": "12",
