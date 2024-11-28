@@ -3,11 +3,13 @@ import './App.css';
 import Navbar  from './component/Navbar/Navbar.jsx'
 import Footer from './component/Footer.jsx'
 import MovieApp from './index.js';
+import Home from './pages/Home.jsx'
 
 
 
 function App() {
   return (
+    
     <div className="App">
      <Navbar/>
      <Footer/>
