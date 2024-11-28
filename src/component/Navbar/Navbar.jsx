@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './Navbar.css'; // Assuming Navbar.css exists
-import Home from './Pages/Home';
-import About from './Pages/About'; // Make sure About.js exists
-import Contact from './Pages/Contact'; // Make sure Contact.js exists
+import Home from './pages/Home';
+import About from './pages/About'; // Make sure About.js exists
+import Contact from './pages/Contact'; // Make sure Contact.js exists
 
 class Navbar extends Component {
   constructor(props) {
