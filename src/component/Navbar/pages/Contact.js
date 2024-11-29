@@ -5,9 +5,9 @@ function Contact() {
     <div>
         <span>
             Contact Page
-            <button onClick={this.changeText}>phone us</button>
-             <button>Facebook</button>  
-             <button>Instagram</button>  
+            <button className='btn' onClick={this.changeText}>phone us</button>
+             <button className='btn'>Facebook</button>  
+             <button className='btn'>Instagram</button>  
         
         </span>
 
