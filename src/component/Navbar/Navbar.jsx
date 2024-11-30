@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './Navbar.css'; // Assuming Navbar.css exists
 import Home from './pages/Home';
-import About from './pages/About'; // Make sure About.js exists
-import Contact from './pages/Contact'; // Make sure Contact.js exists
-import Layout from './pages/Layout';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 class Navbar extends Component {
   constructor(props) {
@@ -84,6 +83,7 @@ class Navbar extends Component {
     return (
       <Router>
         <div>
+          {/* Navbar */}
           <nav className="navbar">
             <div className="logo">MOVIO</div>
             <ul className="nav-links">
@@ -106,13 +106,11 @@ class Navbar extends Component {
             </button>
           </nav>
 
-          {/* Routes for Pages */}
+          {/* Main Routes */}
           <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="contact" element={<Contact />} />
-            </Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
 
           {/* Sign-Up Popup */}
@@ -203,4 +201,5 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
 
