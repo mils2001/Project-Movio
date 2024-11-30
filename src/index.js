@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+
 const API_URL = "http://localhost:3000/films";
 
 function MovieApp() {
@@ -49,6 +50,7 @@ function MovieApp() {
   }, []);
 
   return (
+    
     <div className="movie-app">
       {/* Alert Message */}
       {alertMessage && <div className="alert">{alertMessage}</div>}
