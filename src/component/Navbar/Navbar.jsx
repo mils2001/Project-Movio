@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.css'; // Assuming Navbar.css exists
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+// Make sure this file exists
 
 class Navbar extends Component {
   constructor(props) {
@@ -81,7 +79,7 @@ class Navbar extends Component {
     } = this.state;
 
     return (
-      <Router>
+      
         <div>
           {/* Navbar */}
           <nav className="navbar">
@@ -106,12 +104,7 @@ class Navbar extends Component {
             </button>
           </nav>
 
-          {/* Main Routes */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+        
 
           {/* Sign-Up Popup */}
           {isSignUpPopupVisible && (
@@ -195,11 +188,12 @@ class Navbar extends Component {
             </div>
           )}
         </div>
-      </Router>
+    
     );
   }
 }
 
 export default Navbar;
+
 
 
