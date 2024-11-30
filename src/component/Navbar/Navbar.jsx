@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import './Navbar.css'; // Assuming Navbar.css exists
 import Home from './pages/Home';
 import About from './pages/About'; // Make sure About.js exists
 import Contact from './pages/Contact' // Make sure Contact.js exists
+import Layout from './pages/Layout';
 
 class Navbar extends Component {
   constructor(props) {
@@ -106,11 +107,14 @@ class Navbar extends Component {
           </nav>
 
           {/* Routes for Pages */}
+          <BrowserRouter>
           <Routes>
+            <Route path='/'element={<Layout/>}/>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          </BrowserRouter>
 
           {/* Sign-Up Popup */}
           {isSignUpPopupVisible && (
