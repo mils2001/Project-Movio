@@ -5,9 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Home from "./component/Navbar/pages/Home";
+import About from "./component/Navbar/pages/About";
+import Contact from "./component/Navbar/pages/Contact";
 
 
 const API_URL = "http://localhost:3000/films";
