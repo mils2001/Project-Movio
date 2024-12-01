@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 
 const API_URL = "http://localhost:3000/films";
@@ -54,7 +59,17 @@ function MovieApp() {
     <div className="movie-app">
       {/* Alert Message */}
       {alertMessage && <div className="alert">{alertMessage}</div>}
-
+      <Router>
+      <div>
+        <Navbar/>
+      <Routes>
+          <Route path="/" element={<Home />} /> {/* Home page */}
+          <Route path="/movies" element={<MovieApp />} /> {/* Movies listing */}
+          <Route path="/about" element={<About />} /> {/* About page */}
+          <Route path="/contact" element={<Contact />} /> {/* Contact page */}
+        </Routes>
+      </div>
+      </Router>
       {/* Navbar */}
       <nav className="navbar">
         <input
@@ -122,6 +137,7 @@ function MovieApp() {
               </button>
             </form>
           </div>
+          
         </div>
       )}
 
