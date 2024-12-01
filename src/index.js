@@ -1,14 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./component/Navbar/Navbar.jsx";
-import Home from "./component/Navbar/pages/Home";
-import About from "./component/Navbar/pages/About";
-import Contact from "./component/Navbar/pages/Contact";
-
 
 const API_URL = "http://localhost:3000/films";
 
@@ -16,10 +6,10 @@ function MovieApp() {
   const [movieList, setMovieList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
-  const [isPaymentPopupVisible, setIsPaymentPopupVisible] = useState(false); // Popup state
-  const [selectedMovie, setSelectedMovie] = useState(null); // Selected movie state
-  const [paymentMethod, setPaymentMethod] = useState(""); // Payment method state
-  const [phoneNumber, setPhoneNumber] = useState(""); // Phone number state
+  const [isPaymentPopupVisible, setIsPaymentPopupVisible] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const fetchMovies = async () => {
     try {
@@ -33,7 +23,7 @@ function MovieApp() {
 
   const handlePurchaseClick = (movie) => {
     setSelectedMovie(movie);
-    setIsPaymentPopupVisible(true); // Show the payment popup
+    setIsPaymentPopupVisible(true);
   };
 
   const handlePaymentSubmit = (e) => {
@@ -44,10 +34,10 @@ function MovieApp() {
     setAlertMessage(
       `You purchased "${selectedMovie.title}" using ${paymentMethod}! Phone Number: ${phoneNumber}`
     );
-    setIsPaymentPopupVisible(false); // Close the popup
-    setTimeout(() => setAlertMessage(""), 3000); // Clear the alert after 3 seconds
-    setPhoneNumber(""); // Clear phone number field
-    setPaymentMethod(""); // Clear payment method field
+    setIsPaymentPopupVisible(false);
+    setTimeout(() => setAlertMessage(""), 3000);
+    setPhoneNumber("");
+    setPaymentMethod("");
   };
 
   useEffect(() => {
@@ -55,22 +45,11 @@ function MovieApp() {
   }, []);
 
   return (
-    
     <div className="movie-app">
       {/* Alert Message */}
       {alertMessage && <div className="alert">{alertMessage}</div>}
-      <Router>
-      <div>
-        <Navbar/>
-      <Routes>
-          <Route path="/" element={<Home />} /> {/* Home page */}
-          <Route path="/movies" element={<MovieApp />} /> {/* Movies listing */}
-          <Route path="/about" element={<About />} /> {/* About page */}
-          <Route path="/contact" element={<Contact />} /> {/* Contact page */}
-        </Routes>
-      </div>
-      </Router>
-      {/* Navbar */}
+
+      {/* Search Bar */}
       <nav className="navbar">
         <input
           type="text"
@@ -104,7 +83,7 @@ function MovieApp() {
       {isPaymentPopupVisible && (
         <div className="popup-overlay">
           <div className="popup">
-            <h3>Choose Payment Method for {selectedMovie.title}</h3>
+            <h3>Choose Payment Method for {selectedMovie?.title}</h3>
             <form onSubmit={handlePaymentSubmit}>
               <label htmlFor="payment-method">Payment Method:</label>
               <select
@@ -137,7 +116,6 @@ function MovieApp() {
               </button>
             </form>
           </div>
-          
         </div>
       )}
 
@@ -149,17 +127,4 @@ function MovieApp() {
   );
 }
 
-// Render the app
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-reportWebVitals();
 export default MovieApp;
-
-
-
-
