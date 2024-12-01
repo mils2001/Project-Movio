@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./component/Navbar/Navbar.jsx";
 import Home from "./component/Navbar/pages/Home";
 import About from "./component/Navbar/pages/About";
 import Contact from "./component/Navbar/pages/Contact";
