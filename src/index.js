@@ -11,9 +11,13 @@ function MovieApp() {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  // Fetch movies from API
   const fetchMovies = async () => {
     try {
       const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error("Failed to fetch movies");
+      }
       const data = await response.json();
       setMovieList(data);
     } catch (error) {
@@ -21,16 +25,15 @@ function MovieApp() {
     }
   };
 
+  // Handle purchase button click
   const handlePurchaseClick = (movie) => {
     setSelectedMovie(movie);
     setIsPaymentPopupVisible(true);
   };
 
+  // Handle payment form submission
   const handlePaymentSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      `Movie: ${selectedMovie.title}, Payment Method: ${paymentMethod}, Phone Number: ${phoneNumber}`
-    );
     setAlertMessage(
       `You purchased "${selectedMovie.title}" using ${paymentMethod}! Phone Number: ${phoneNumber}`
     );
@@ -39,6 +42,11 @@ function MovieApp() {
     setPhoneNumber("");
     setPaymentMethod("");
   };
+
+  // Filter movies based on search query
+  const filteredMovies = movieList.filter((movie) =>
+    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   useEffect(() => {
     fetchMovies();
@@ -57,26 +65,27 @@ function MovieApp() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button className="search" type="button">
-          Search
-        </button>
       </nav>
 
       {/* Movie List */}
       <div className="movie-list">
-        {movieList.map((movie) => (
-          <div key={movie.id} className="movie-card">
-            <img src={movie.poster} alt={movie.title} />
-            <h3>{movie.title}</h3>
-            <p>{movie.description}</p>
-            <button
-              className="btn"
-              onClick={() => handlePurchaseClick(movie)}
-            >
-              Purchase Movie
-            </button>
-          </div>
-        ))}
+        {filteredMovies.length > 0 ? (
+          filteredMovies.map((movie) => (
+            <div key={movie.id} className="movie-card">
+              <img src={movie.poster} alt={movie.title} />
+              <h3>{movie.title}</h3>
+              <p>{movie.description}</p>
+              <button
+                className="btn"
+                onClick={() => handlePurchaseClick(movie)}
+              >
+                Purchase Movie
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No movies found.</p>
+        )}
       </div>
 
       {/* Payment Popup */}
@@ -121,7 +130,7 @@ function MovieApp() {
 
       {/* Footer */}
       <footer className="footer">
-        <span>2025 Molvotv Entertainment@All rights reserved.</span>
+        <span>2025 Molvotv Entertainment @ All rights reserved.</span>
       </footer>
     </div>
   );
