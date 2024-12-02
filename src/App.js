@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
-import MovieApp from "./MovieApp";
+import MovieApp from "./index";
 import Home from "./component/Navbar/pages/Home";
 import About from "./component/Navbar/pages/About";
 import Contact from "./component/Navbar/pages/Contact";
@@ -18,6 +18,7 @@ function App() {
         <Route path="/movies" element={<MovieApp />} />
       </Routes>
     </BrowserRouter>
+    
   );
 }
 
