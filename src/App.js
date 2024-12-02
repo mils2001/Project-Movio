@@ -5,6 +5,7 @@ import MovieApp from "./MovieApp";
 import Home from "./component/Navbar/pages/Home";
 import About from "./component/Navbar/pages/About";
 import Contact from "./component/Navbar/pages/Contact";
+import './App.css'
 
 function App() {
   return (
