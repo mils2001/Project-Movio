@@ -5,7 +5,7 @@ function footer() {
   return (
     <div className='footer'>
         <footer>
-            <span></span>
+            <span>welcome to movio movies</span>
         </footer>
     </div>
   )

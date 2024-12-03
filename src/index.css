@@ -118,6 +118,10 @@ h1 {
 .movie-card .btn:focus {
   outline: none;
 }
+.btn{
+  background-color: #000;
+  color: gold;
+}
  
 
 
